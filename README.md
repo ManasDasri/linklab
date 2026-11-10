@@ -16,12 +16,6 @@ Aim:
 - Optimising system architecture to make them more scalable
 - Shipping a new blazingly fast open source url shortener alternative
 
-## Current status
-
-**Phase 1 — read-only redirects.** The Rust service now handles short-code
-lookups, temporary redirects, and health checks. Links are currently defined in
-`src/main.rs`; unknown codes return `404 Not Found`.
-
 ## Run locally
 
 With Rust and Cargo installed:
