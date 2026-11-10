@@ -11,8 +11,10 @@ LinkLab is a URL shortener built for speed and simplicity. The goal is a small,
 fast service that turns long URLs into short links and gets visitors to their
 destination quickly.
 
-I'm building and shipping it in phases: a focused core first, then link creation,
-persistence, and measured performance improvements.
+Aim:
+- Learning Rust + System Design concepts
+- Optimising system architecture to make them more scalable
+- Shipping a new blazingly fast open source url shortener alternative
 
 ## Current status
 
