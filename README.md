@@ -62,8 +62,7 @@ The roadmap is a starting point and may evolve as the project takes shape.
 
 Performance numbers will be published alongside reproducible benchmarks.
 
-## Follow along
-
+##
 Watch the repository for each phase. Ideas and feedback are welcome in
 [Issues](https://github.com/ManasDasri/linklab/issues).
 
