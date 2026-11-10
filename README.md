@@ -16,8 +16,31 @@ persistence, and measured performance improvements.
 
 ## Current status
 
-**Phase 0 — repository foundations.** This first commit contains the README,
-MIT license, and Rust `.gitignore`. The Rust service will ship in a later phase.
+**Phase 1 — read-only redirects.** The Rust service now handles short-code
+lookups, temporary redirects, and health checks. Links are currently defined in
+`src/main.rs`; unknown codes return `404 Not Found`.
+
+## Run locally
+
+With Rust and Cargo installed:
+
+```sh
+git clone https://github.com/ManasDasri/linklab.git
+cd linklab
+cargo run --locked
+```
+
+The server listens at `http://127.0.0.1:3000`.
+
+```sh
+# Check server health
+curl http://127.0.0.1:3000/health
+
+# Inspect a short link's 307 redirect
+curl -i http://127.0.0.1:3000/rust
+```
+
+Try `/abc123`, `/rust`, or `/github` for the built-in links.
 
 ## Stack
 
@@ -32,13 +55,12 @@ The roadmap is a starting point and may evolve as the project takes shape.
 | Phase | Focus | Status |
 | --- | --- | --- |
 | 0 | Repository setup, documentation, and licensing | Shipped |
-| 1 | Read-only redirects, short-code lookups, and a health endpoint | In progress |
+| 1 | Read-only redirects, short-code lookups, and a health endpoint | Shipped |
 | 2 | Link creation and destination URL validation | Planned |
 | 3 | Persistent storage so links survive restarts | Planned |
 | 4 | Benchmarks, performance tuning, and deployment readiness | Planned |
 
-Usage instructions will arrive with the first code release. Performance numbers
-will be published alongside reproducible benchmarks.
+Performance numbers will be published alongside reproducible benchmarks.
 
 ## Follow along
 
