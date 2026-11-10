@@ -11,10 +11,13 @@ LinkLab is a URL shortener built for speed and simplicity. The goal is a small,
 fast service that turns long URLs into short links and gets visitors to their
 destination quickly.
 
-Aim:
-- Learning Rust + System Design concepts
-- Optimising system architecture to make them more scalable
-- Shipping a new blazingly fast open source url shortener alternative
+LinkLab backend can now: (will keep updating as new features ship)
+- Listen for HTTP requests on port 3000.
+- Handle multiple routes.
+- Extract short codes using Path.
+- Access a shared HashMap using State and Arc.
+- Look up destinations.
+- Return actual HTTP redirects or 404 errors.
 
 ## Run locally
 
