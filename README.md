@@ -11,14 +11,13 @@ LinkLab is a URL shortener built for speed and simplicity. The goal is a small,
 fast service that turns long URLs into short links and gets visitors to their
 destination quickly.
 
-I'm building and shipping it in phases: a focused core first, then link creation,
-persistence, and measured performance improvements.
-
-## Current status
-
-**Phase 1 — read-only redirects.** The Rust service now handles short-code
-lookups, temporary redirects, and health checks. Links are currently defined in
-`src/main.rs`; unknown codes return `404 Not Found`.
+LinkLab backend can now: (will keep updating as new features ship)
+- Listen for HTTP requests on port 3000.
+- Handle multiple routes.
+- Extract short codes using Path.
+- Access a shared HashMap using State and Arc.
+- Look up destinations.
+- Return actual HTTP redirects or 404 errors.
 
 ## Run locally
 
@@ -62,8 +61,7 @@ The roadmap is a starting point and may evolve as the project takes shape.
 
 Performance numbers will be published alongside reproducible benchmarks.
 
-## Follow along
-
+##
 Watch the repository for each phase. Ideas and feedback are welcome in
 [Issues](https://github.com/ManasDasri/linklab/issues).
 
