@@ -8,8 +8,9 @@ use axum::{
     {Json, routing::post},
 };
 use serde::Deserialize;
+use sqlx::PgPool;
 use std::{collections::HashMap, sync::Arc};
-use tokio::sync::RwLock;
+use tokio::sync::RwLock; //Postgres connection pool
 
 //struct creation
 #[derive(Deserialize)]
@@ -28,6 +29,12 @@ async fn main() {
 
     links.insert(String::from("github"), String::from("https://github.com"));
     let shared_links = Arc::new(RwLock::new(links)); //creating a common ownership based hashmap
+
+    let pool = PgPool::connect("postgresql:///linklab?host=/tmp") //establish a postgresql connection pool
+        .await
+        .expect("Database connection failed");
+
+    println!("Connected to Postgresql!");
 
     let app: Router = Router::new()
         .route("/", get(home))
